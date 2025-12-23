@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { label: t('nav.studio'), path: `${prefix}/` },
     { label: t('nav.projects'), path: `${prefix}/projects` },
-    { label: t('nav.about'), path: `${prefix}/about` },
+    { label: t('nav.about'), path: `${prefix}/#about` },
     { label: t('nav.contact'), path: `${prefix}/contact` },
   ];
 

@@ -61,7 +61,19 @@ export function getHomeContent() {
         subtitle_ar: data.subtitle_ar,
         description: data.description,
         description_ar: data.description_ar,
-        music_file: data.music_file
+        music_file: data.music_file,
+        // About Section
+        about_title: data.about_title,
+        about_title_ar: data.about_title_ar,
+        about_description: data.about_description,
+        about_description_ar: data.about_description_ar,
+        vision_text: data.vision_text,
+        vision_text_ar: data.vision_text_ar,
+        mission_text: data.mission_text,
+        mission_text_ar: data.mission_text_ar,
+        values: data.values,
+        founders: data.founders,
+        team: data.team
     };
 }
 

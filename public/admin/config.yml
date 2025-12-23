@@ -40,6 +40,40 @@ collections:
           - {label: "Description", name: "description", widget: "markdown"}
           - {label: "Description (Arabic)", name: "description_ar", widget: "markdown", required: false}
           - {label: "Background Music", name: "music_file", widget: "file", required: false, allow_multiple: false}
+          # About Section Fields
+          - {label: "About Title", name: "about_title", widget: "string", required: false}
+          - {label: "About Title (Arabic)", name: "about_title_ar", widget: "string", required: false}
+          - {label: "About Description", name: "about_description", widget: "markdown", required: false}
+          - {label: "About Description (Arabic)", name: "about_description_ar", widget: "markdown", required: false}
+          - {label: "Vision Text", name: "vision_text", widget: "text", required: false}
+          - {label: "Vision Text (Arabic)", name: "vision_text_ar", widget: "text", required: false}
+          - {label: "Mission Text", name: "mission_text", widget: "text", required: false}
+          - {label: "Mission Text (Arabic)", name: "mission_text_ar", widget: "text", required: false}
+          - label: "Core Values"
+            name: "values"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Value Title", name: "title", widget: "string"}
+              - {label: "Value Title (Arabic)", name: "title_ar", widget: "string", required: false}
+          - label: "Founders"
+            name: "founders"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
+              - {label: "Bio (Arabic)", name: "bio_ar", widget: "text", required: false}
+              - {label: "Image", name: "image", widget: "image", required: false}
+          - label: "Team Members"
+            name: "team"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
   
   - name: "projects"
     label: "Projects"

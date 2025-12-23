@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MagneticButton from '../components/MagneticButton';
 import { getHomeContent } from '../lib/content'; // Import loader
+import AboutSection from '../components/AboutSection';
 
 import SEO from '../components/SEO';
 
@@ -16,12 +17,19 @@ const Home: React.FC = () => {
   const { t } = useTranslation();
   const prefix = language === 'ar' ? '/ar' : '';
 
-  const homeContent = getHomeContent() || {
+  // Fallback content if CMS is empty or loading
+  const fallbackHomeContent: any = {
     title: "Structural Fluidity Defined.",
     heroImage: "https://dl.dropbox.com/scl/fi/19wbei0t501px7kxatjil/Gemini_Generated_Image_234d93234d93234d.png?rlkey=wt497h4w16aizkamn253kz17q&st=8zmrqomr",
+    heroImageMobile: "",
     subtitle: "Crafting the Future of Space.",
-    description: "We specialize in the meticulous intersection of structural integrity and fluid aesthetic finishing. Our approach treats every project as a unique architectural dialogue, balancing heavy masonry with light, metallic luxury."
+    description: "We specialize in the meticulous intersection of structural integrity and fluid aesthetic finishing. Our approach treats every project as a unique architectural dialogue, balancing heavy masonry with light, metallic luxury.",
+    values: [],
+    founders: [],
+    team: []
   };
+
+  const homeContent = getHomeContent() || fallbackHomeContent;
 
   const title = getContent(homeContent, 'title');
   const subtitle = getContent(homeContent, 'subtitle');
@@ -130,29 +138,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-32 px-6 md:px-12 border-t border-stone-200 dark:border-stone-800/50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <span className="text-gold text-xs uppercase tracking-[0.4em] font-bold">{t('nav.about')}</span>
-            <h2 className="text-4xl font-serif mt-4">{subtitle}</h2>
-          </div>
-          <div className="md:col-span-8 flex flex-col gap-8">
-            <p className="text-2xl md:text-3xl font-light text-stone-600 dark:text-stone-400 leading-relaxed">
-              {description}
-            </p>
-            <div className="grid grid-cols-2 gap-8 mt-12">
-              <div>
-                <span className="text-3xl font-serif text-stone-900 dark:text-white">150+</span>
-                <p className="text-stone-500 text-sm uppercase tracking-widest mt-2">{t('nav.projects')} Completed</p>
-              </div>
-              <div>
-                <span className="text-3xl font-serif text-stone-900 dark:text-white">12</span>
-                <p className="text-stone-500 text-sm uppercase tracking-widest mt-2">Design Awards</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutSection content={homeContent} />
 
       {/* Featured Projects Ticker / Teaser */}
       <section className="bg-stone-200/50 dark:bg-stone-900/30 py-24 overflow-hidden border-y border-stone-200 dark:border-stone-800/50">
