@@ -1,6 +1,6 @@
 ---
 title: test
-image: /images/screenshot-2025-12-20-201329.png
+image: /images/3.webp
 description: good
 sector: SPORTS
 year: "2030"
