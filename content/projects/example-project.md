@@ -1,6 +1,6 @@
 ---
 title: Example Project
-image: /images/gemini_generated_image_y35rzhy35rzhy35r.png
+image: /images/3.webp
 description: A sample project
 sector: COMMERCIAL
 year: "2024"
