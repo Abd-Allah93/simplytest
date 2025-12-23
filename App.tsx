@@ -18,16 +18,25 @@ import CustomCursor from './components/CustomCursor';
 import AudioPlayer from './components/AudioPlayer';
 
 const ScrollManager = ({ lenisRef }: { lenisRef: React.MutableRefObject<Lenis | null> }) => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // Scroll to top on route change using Lenis for consistency
+    // Handle hash scrolling if present
+    if (hash && lenisRef.current) {
+      // slight timeout to allow layout to settle
+      setTimeout(() => {
+        lenisRef.current?.scrollTo(hash, { offset: 0 });
+      }, 100);
+      return;
+    }
+
+    // Scroll to top on route change using Lenis for consistency (only if no hash)
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
     }
-  }, [pathname, lenisRef]);
+  }, [pathname, hash, lenisRef]);
 
   return null;
 };
