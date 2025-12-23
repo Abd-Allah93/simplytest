@@ -3,7 +3,7 @@ backend:
   repo: Abd-Allah93/simplytest.git  # Replace with your GitHub username and repo name
   branch: main
   base_url: https://sveltia-cms-auth.topgamerwow-93.workers.dev/
-  auth_endpoint: callback
+  auth_endpoint: auth
 
 # Comment this out for production
 # local_backend: true
