@@ -16,6 +16,8 @@ const Home: React.FC = () => {
     description: "We specialize in the meticulous intersection of structural integrity and fluid aesthetic finishing. Our approach treats every project as a unique architectural dialogue, balancing heavy masonry with light, metallic luxury."
   };
 
+  const mobileHeroImage = homeContent.heroImage ? homeContent.heroImage.replace(/(\.[\w\d_-]+)$/i, '-mobile$1') : '';
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,7 +51,7 @@ const Home: React.FC = () => {
           className="absolute inset-0 z-0"
         >
           <picture>
-            <source media="(max-width: 768px)" srcSet={homeContent.heroImage} />
+            <source media="(max-width: 768px)" srcSet={mobileHeroImage} />
             <source media="(min-width: 769px)" srcSet={homeContent.heroImage} />
             <img
               src={homeContent.heroImage}
