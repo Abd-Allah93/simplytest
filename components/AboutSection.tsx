@@ -162,7 +162,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ content }) => {
                             ) : (
                                 <div className="w-48 h-48 mb-8 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center border-2 border-stone-300 dark:border-stone-700 group-hover:border-gold/50 transition-colors">
                                     <span className="text-4xl font-serif text-stone-500 dark:text-stone-600">
-                                        {(founder as any).initials || founder.name.charAt(0)}
+                                        {founder.initials || founder.name.charAt(0)}
                                     </span>
                                 </div>
                             )}
@@ -212,7 +212,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ content }) => {
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center bg-stone-100 dark:bg-stone-800 group-hover:bg-stone-200 dark:group-hover:bg-stone-800/80 transition-colors duration-500">
                                         <span className="text-6xl font-serif text-stone-400 dark:text-stone-700 font-bold group-hover:text-gold transition-colors duration-500">
-                                            {(member as any).initials || member.name.charAt(0)}
+                                            {member.initials || member.name.charAt(0)}
                                         </span>
                                     </div>
                                 )}
