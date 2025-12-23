@@ -4,22 +4,27 @@ import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../hooks/useLanguage';
+import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const location = useLocation();
+  const { t } = useTranslation();
+  const { language } = useLanguage();
+  const prefix = language === 'ar' ? '/ar' : '';
 
   const navItems = [
-    { label: 'Studio', path: '/' },
-    { label: 'Work', path: '/projects' },
-    { label: 'About', path: '/about' },
-    { label: 'Contact', path: '/contact' },
+    { label: t('nav.studio'), path: `${prefix}/` },
+    { label: t('nav.projects'), path: `${prefix}/projects` },
+    { label: t('nav.about'), path: `${prefix}/about` },
+    { label: t('nav.contact'), path: `${prefix}/contact` },
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 px-6 md:px-12 py-6 flex justify-between items-center transition-colors duration-300">
-      <Link to="/" className="text-2xl font-serif font-bold tracking-tighter">
+      <Link to={prefix || '/'} className="text-2xl font-serif font-bold tracking-tighter">
         <span className="text-red-600">Simply</span><span className="text-blue-600">Design</span>
       </Link>
 
@@ -45,6 +50,7 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
+        <LanguageSwitcher />
         <ThemeToggle />
 
         {/* Mobile Toggle */}

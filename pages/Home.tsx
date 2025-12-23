@@ -8,13 +8,24 @@ import { getHomeContent } from '../lib/content'; // Import loader
 
 import SEO from '../components/SEO';
 
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../hooks/useLanguage';
+
 const Home: React.FC = () => {
+  const { getContent, language } = useLanguage();
+  const { t } = useTranslation();
+  const prefix = language === 'ar' ? '/ar' : '';
+
   const homeContent = getHomeContent() || {
     title: "Structural Fluidity Defined.",
     heroImage: "https://dl.dropbox.com/scl/fi/19wbei0t501px7kxatjil/Gemini_Generated_Image_234d93234d93234d.png?rlkey=wt497h4w16aizkamn253kz17q&st=8zmrqomr",
     subtitle: "Crafting the Future of Space.",
     description: "We specialize in the meticulous intersection of structural integrity and fluid aesthetic finishing. Our approach treats every project as a unique architectural dialogue, balancing heavy masonry with light, metallic luxury."
   };
+
+  const title = getContent(homeContent, 'title');
+  const subtitle = getContent(homeContent, 'subtitle');
+  const description = getContent(homeContent, 'description');
 
   const mobileHeroImage = homeContent.heroImage ? homeContent.heroImage.replace(/(\.[\w\d_-]+)$/i, '-mobile$1') : '';
 
@@ -34,9 +45,10 @@ const Home: React.FC = () => {
   return (
     <div className="w-full">
       <SEO
-        title="SimplyDesign | Architectural Fluidity"
-        description={homeContent.description}
+        title={`SimplyDesign | ${title}`}
+        description={description}
         canonical="/"
+        lang={language}
       />
       {/* Hero Section */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
@@ -71,7 +83,7 @@ const Home: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            {homeContent.title.split(" ").map((word, i) => (
+            {title.split(" ").map((word: string, i: number) => (
               <motion.span
                 key={i}
                 variants={itemVariants}
@@ -87,9 +99,9 @@ const Home: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
           >
-            <Link to="/projects">
+            <Link to={`${prefix}/projects`}>
               <MagneticButton>
-                View Portfolio <ArrowUpRight size={16} />
+                {t('nav.portfolio')} <ArrowUpRight size={16} />
               </MagneticButton>
             </Link>
           </motion.div>
@@ -109,7 +121,7 @@ const Home: React.FC = () => {
               className="absolute inset-0 bg-gold"
             />
           </div>
-          <span className="text-[10px] uppercase tracking-[0.3em] text-stone-500">Scroll Down</span>
+          <span className="text-[10px] uppercase tracking-[0.3em] text-stone-500">{t('common.scroll_down')}</span>
         </motion.div>
       </section>
 
@@ -117,17 +129,17 @@ const Home: React.FC = () => {
       <section className="py-32 px-6 md:px-12 border-t border-stone-200 dark:border-stone-800/50">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <span className="text-gold text-xs uppercase tracking-[0.4em] font-bold">Studio Profile</span>
-            <h2 className="text-4xl font-serif mt-4">{homeContent.subtitle}</h2>
+            <span className="text-gold text-xs uppercase tracking-[0.4em] font-bold">{t('nav.about')}</span>
+            <h2 className="text-4xl font-serif mt-4">{subtitle}</h2>
           </div>
           <div className="md:col-span-8 flex flex-col gap-8">
             <p className="text-2xl md:text-3xl font-light text-stone-600 dark:text-stone-400 leading-relaxed">
-              {homeContent.description}
+              {description}
             </p>
             <div className="grid grid-cols-2 gap-8 mt-12">
               <div>
                 <span className="text-3xl font-serif text-stone-900 dark:text-white">150+</span>
-                <p className="text-stone-500 text-sm uppercase tracking-widest mt-2">Projects Completed</p>
+                <p className="text-stone-500 text-sm uppercase tracking-widest mt-2">{t('nav.projects')} Completed</p>
               </div>
               <div>
                 <span className="text-3xl font-serif text-stone-900 dark:text-white">12</span>

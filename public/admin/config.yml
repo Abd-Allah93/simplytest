@@ -32,9 +32,12 @@ collections:
         file: "content/pages/home.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Title (Arabic)", name: "title_ar", widget: "string", required: false}
           - {label: "Hero Image", name: "hero_image", widget: "image"}
           - {label: "Subtitle", name: "subtitle", widget: "string"}
+          - {label: "Subtitle (Arabic)", name: "subtitle_ar", widget: "string", required: false}
           - {label: "Description", name: "description", widget: "markdown"}
+          - {label: "Description (Arabic)", name: "description_ar", widget: "markdown", required: false}
   
   - name: "projects"
     label: "Projects"
@@ -43,7 +46,10 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Project Name", name: "title", widget: "string"}
+      - {label: "Project Name (Arabic)", name: "title_ar", widget: "string", required: false}
       - {label: "Project Image", name: "image", widget: "image"}
       - {label: "Description", name: "description", widget: "text"}
+      - {label: "Description (Arabic)", name: "description_ar", widget: "text", required: false}
       - {label: "Link", name: "link", widget: "string", required: false}
       - {label: "Details", name: "body", widget: "markdown"}
+      - {label: "Details (Arabic)", name: "body_ar", widget: "markdown", required: false}

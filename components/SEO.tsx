@@ -8,16 +8,22 @@ interface SEOProps {
     canonical?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({
+const SEO: React.FC<SEOProps & { lang?: 'en' | 'ar' }> = ({
     title,
     description = "A high-end construction and fit-out firm specializing in architectural fluid designs.",
     image = "/og-image.jpg",
-    canonical
+    canonical,
+    lang = 'en'
 }) => {
     // Ensure standard JavaScript string interpolation
     const siteUrl = "https://simplytest.pages.dev";
     const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
     const fullCanonical = canonical ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`) : undefined;
+
+    React.useEffect(() => {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }, [lang]);
 
     return (
         <>
@@ -30,6 +36,7 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={fullImage} />
+            <meta property="og:locale" content={lang === 'ar' ? 'ar_AR' : 'en_US'} />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />

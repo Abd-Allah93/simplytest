@@ -7,12 +7,21 @@ import { ArrowUpRight, X, ZoomIn } from 'lucide-react'; // Added X and ZoomIn ic
 
 import SEO from '../components/SEO';
 
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../hooks/useLanguage';
+
 const Projects: React.FC = () => {
+  const { getContent, language } = useLanguage();
+  const { t } = useTranslation();
+
   // Use CMS data
   const projectsData = getProjects();
   // Transform to match Project interface if needed, or assume it matches (with forced casting for sector)
   const PROJECTS: Project[] = projectsData.map(p => ({
     ...p,
+    title: getContent(p, 'title'),
+    description: getContent(p, 'description'),
+    body: getContent(p, 'body'),
     sector: p.sector as Sector
   }));
 
@@ -30,9 +39,10 @@ const Projects: React.FC = () => {
   return (
     <div className="pt-32 pb-24 px-6 md:px-12 min-h-screen">
       <SEO
-        title="Selected Works | SimplyDesign"
-        description="Explore our portfolio of commercial, residential, and administrative projects."
+        title={`Selected Works | SimplyDesign`}
+        description={t('nav.projects')} // Simplified description or add to translation
         canonical="/projects"
+        lang={language}
       />
       <div className="max-w-7xl mx-auto">
         <header className="mb-16">

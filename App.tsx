@@ -85,10 +85,17 @@ const App: React.FC = () => {
                 </div>
               }>
                 <Routes>
+                  {/* English Routes */}
                   <Route path="/" element={<Home />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/contact" element={<Contact />} />
+
+                  {/* Arabic Routes */}
+                  <Route path="/ar" element={<Home />} />
+                  <Route path="/ar/projects" element={<Projects />} />
+                  <Route path="/ar/about" element={<About />} />
+                  <Route path="/ar/contact" element={<Contact />} />
                 </Routes>
               </React.Suspense>
             </AnimatePresence>
