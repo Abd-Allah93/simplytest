@@ -2,9 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { getHomeContent } from '../lib/content';
+
 const AudioPlayer: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const content = getHomeContent();
+  // Use CMS music file if available, otherwise fallback to default
+  const musicSrc = content?.music_file || "https://dl.dropbox.com/scl/fi/xj8y6138h39clrr6a28h3/SnapInsta.to_AQO2oQSu4SctUqNdDH4LPRRhxkkvqYrQeQHiPG4_rUFleaGfFX6fIObp-EjbxI11I8ZG09wTp4fdU5UIQ2szGuk6ffzmz8U5S0_wRG0.mp3?rlkey=b25e79gvgtksuunio34x3qnek&st=ztbmgju5";
 
   useEffect(() => {
     // 1. Define the global interaction handler
@@ -70,7 +75,7 @@ const AudioPlayer: React.FC = () => {
       <audio
         ref={audioRef}
         loop
-        src="https://dl.dropbox.com/scl/fi/xj8y6138h39clrr6a28h3/SnapInsta.to_AQO2oQSu4SctUqNdDH4LPRRhxkkvqYrQeQHiPG4_rUFleaGfFX6fIObp-EjbxI11I8ZG09wTp4fdU5UIQ2szGuk6ffzmz8U5S0_wRG0.mp3?rlkey=b25e79gvgtksuunio34x3qnek&st=ztbmgju5"
+        src={musicSrc}
       />
 
       <AnimatePresence>

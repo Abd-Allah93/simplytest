@@ -59,7 +59,8 @@ export function getHomeContent() {
         subtitle: data.subtitle,
         subtitle_ar: data.subtitle_ar,
         description: data.description,
-        description_ar: data.description_ar
+        description_ar: data.description_ar,
+        music_file: data.music_file
     };
 }
 
