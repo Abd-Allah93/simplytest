@@ -1,14 +1,17 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Abd-Allah93/simplytest.git  # Replace with your GitHub username and repo name
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
-local_backend: true
+# Comment this out for production
+# local_backend: true
 
 media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  # Blog posts
   - name: "blog"
     label: "Blog Posts"
     folder: "content/blog"
@@ -21,7 +24,6 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
   
-  # Home page content
   - name: "home"
     label: "Home Page"
     files:
@@ -34,7 +36,6 @@ collections:
           - {label: "Subtitle", name: "subtitle", widget: "string"}
           - {label: "Description", name: "description", widget: "markdown"}
   
-  # Projects
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
@@ -44,8 +45,5 @@ collections:
       - {label: "Project Name", name: "title", widget: "string"}
       - {label: "Project Image", name: "image", widget: "image"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Sector", name: "sector", widget: "select", options: ["COMMERCIAL", "RESIDENTIAL", "ADMINISTRATIVE", "HOTELS", "SPORTS", "PHARMACIES", "ARCHITECTURAL BUILDINGS", "ENTRANCES"]}
-      - {label: "Year", name: "year", widget: "string"}
-      - {label: "Location", name: "location", widget: "string"}
       - {label: "Link", name: "link", widget: "string", required: false}
       - {label: "Details", name: "body", widget: "markdown"}
