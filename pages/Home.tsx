@@ -71,7 +71,7 @@ const Home: React.FC = () => {
             <source media="(min-width: 769px)" srcSet={homeContent.heroImage} />
             <img
               src={homeContent.heroImage}
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-center md:object-top"
               alt="Hero Architectural"
               fetchPriority="high"
               loading="eager"
