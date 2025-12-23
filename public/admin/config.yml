@@ -48,6 +48,10 @@ collections:
       - {label: "Project Name", name: "title", widget: "string"}
       - {label: "Project Name (Arabic)", name: "title_ar", widget: "string", required: false}
       - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Sector", name: "sector", widget: "select", options: ["COMMERCIAL", "RESIDENTIAL", "ADMINISTRATIVE", "HOTELS", "SPORTS", "PHARMACIES", "ARCHITECTURAL BUILDINGS", "ENTRANCES"]}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Location (Arabic)", name: "location_ar", widget: "string", required: false}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Description (Arabic)", name: "description_ar", widget: "text", required: false}
       - {label: "Link", name: "link", widget: "string", required: false}
