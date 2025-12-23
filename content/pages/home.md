@@ -7,4 +7,9 @@ subtitle: Building The Present
 subtitle_ar: نبني الحاضر
 description: This is the home page description
 music_file: /images/elegant-piano-music-350061.mp3
+founders:
+  - name: test founders
+    role: test founders
+    bio: test founders
+    image: /images/unnamed.jpg
 ---
