@@ -61,9 +61,9 @@ const Home: React.FC = () => {
 
         {/* Background Visual (Placeholder Video Effect with Image) */}
         <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 3, ease: 'easeOut' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
           className="absolute inset-0 z-0"
         >
           <picture>
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
             <source media="(min-width: 769px)" srcSet={homeContent.heroImage} />
             <img
               src={homeContent.heroImage}
-              className="w-full h-full object-cover object-center md:object-top"
+              className="w-full h-full object-cover object-center md:object-[50%_25%]"
               alt="Hero Architectural"
               fetchPriority="high"
               loading="eager"
