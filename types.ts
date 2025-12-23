@@ -1,5 +1,5 @@
 
-export type Sector = 
+export type Sector =
   | 'COMMERCIAL'
   | 'RESIDENTIAL'
   | 'ADMINISTRATIVE'
@@ -11,12 +11,18 @@ export type Sector =
 
 export interface Project {
   id: string;
+  slug?: string;
   title: string;
+  title_ar?: string;
   sector: Sector;
   image: string;
   description: string;
+  description_ar?: string;
   year: string;
   location: string;
+  link?: string;
+  body?: string;
+  body_ar?: string;
 }
 
 export interface NavItem {

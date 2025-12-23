@@ -54,9 +54,12 @@ export function getHomeContent() {
 
     return {
         title: data.title,
+        title_ar: data.title_ar,
         heroImage: data.hero_image,
         subtitle: data.subtitle,
-        description: data.description
+        subtitle_ar: data.subtitle_ar,
+        description: data.description,
+        description_ar: data.description_ar
     };
 }
 
@@ -71,13 +74,16 @@ export function getProjects() {
             id: slug, // Using slug as ID
             slug,
             title: data.title,
+            title_ar: data.title_ar,
             image: data.image,
             description: data.description,
+            description_ar: data.description_ar,
             sector: data.sector || 'OTHER',
             year: data.year || new Date().getFullYear().toString(),
             location: data.location || 'Unknown',
             link: data.link,
-            body
+            body,
+            body_ar: data.body_ar
         };
     });
 }
