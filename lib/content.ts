@@ -56,6 +56,7 @@ export function getHomeContent() {
         title: data.title,
         title_ar: data.title_ar,
         heroImage: data.hero_image,
+        heroImageMobile: data.hero_image_mobile,
         subtitle: data.subtitle,
         subtitle_ar: data.subtitle_ar,
         description: data.description,

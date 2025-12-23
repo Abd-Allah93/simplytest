@@ -34,6 +34,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Title (Arabic)", name: "title_ar", widget: "string", required: false}
           - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Hero Image (Mobile)", name: "hero_image_mobile", widget: "image", required: false}
           - {label: "Subtitle", name: "subtitle", widget: "string"}
           - {label: "Subtitle (Arabic)", name: "subtitle_ar", widget: "string", required: false}
           - {label: "Description", name: "description", widget: "markdown"}

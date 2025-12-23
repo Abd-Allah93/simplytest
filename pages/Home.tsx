@@ -27,7 +27,11 @@ const Home: React.FC = () => {
   const subtitle = getContent(homeContent, 'subtitle');
   const description = getContent(homeContent, 'description');
 
-  const mobileHeroImage = homeContent.heroImage ? homeContent.heroImage.replace(/(\.[\w\d_-]+)$/i, '-mobile$1') : '';
+  const mobileHeroImage = homeContent.heroImageMobile
+    ? homeContent.heroImageMobile
+    : homeContent.heroImage
+      ? homeContent.heroImage.replace(/(\.[\w\d_-]+)$/i, '-mobile$1')
+      : '';
 
   const containerVariants = {
     hidden: { opacity: 0 },

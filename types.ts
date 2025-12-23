@@ -29,3 +29,15 @@ export interface NavItem {
   label: string;
   path: string;
 }
+
+export interface HomeContent {
+  title: string;
+  title_ar?: string;
+  heroImage: string;
+  heroImageMobile?: string;
+  subtitle: string;
+  subtitle_ar?: string;
+  description: string;
+  description_ar?: string;
+  music_file?: string;
+}
