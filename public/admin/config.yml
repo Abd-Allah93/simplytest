@@ -34,6 +34,8 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Title (Arabic)", name: "title_ar", widget: "string", required: false}
           - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Hero Image Alt Text", name: "hero_image_alt", widget: "string", required: false}
+          - {label: "Hero Image Alt Text (Arabic)", name: "hero_image_alt_ar", widget: "string", required: false}
           - {label: "Hero Image (Mobile)", name: "hero_image_mobile", widget: "image", required: false}
           - {label: "Subtitle", name: "subtitle", widget: "string"}
           - {label: "Subtitle (Arabic)", name: "subtitle_ar", widget: "string", required: false}
@@ -66,6 +68,8 @@ collections:
               - {label: "Bio", name: "bio", widget: "text"}
               - {label: "Bio (Arabic)", name: "bio_ar", widget: "text", required: false}
               - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+              - {label: "Image Alt Text (Arabic)", name: "image_alt_ar", widget: "string", required: false}
           - label: "Team Members"
             name: "team"
             widget: "list"
@@ -74,6 +78,8 @@ collections:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Role", name: "role", widget: "string"}
               - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+              - {label: "Image Alt Text (Arabic)", name: "image_alt_ar", widget: "string", required: false}
   
   - name: "projects"
     label: "Projects"
@@ -84,6 +90,8 @@ collections:
       - {label: "Project Name", name: "title", widget: "string"}
       - {label: "Project Name (Arabic)", name: "title_ar", widget: "string", required: false}
       - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+      - {label: "Image Alt Text (Arabic)", name: "image_alt_ar", widget: "string", required: false}
       - {label: "Sector", name: "sector", widget: "select", options: ["COMMERCIAL", "RESIDENTIAL", "ADMINISTRATIVE", "HOTELS", "SPORTS", "PHARMACIES", "ARCHITECTURAL BUILDINGS", "ENTRANCES"]}
       - {label: "Year", name: "year", widget: "string"}
       - {label: "Location", name: "location", widget: "string"}

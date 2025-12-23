@@ -91,8 +91,8 @@ const Projects: React.FC = () => {
                     <motion.img
                       layoutId={`project-image-${project.id}`} // Image morph ID
                       src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                      alt={getContent(project, 'image_alt') || project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                     />
                     <div className="absolute inset-0 bg-stone-950/40 group-hover:bg-stone-950/10 transition-colors duration-500" />
 

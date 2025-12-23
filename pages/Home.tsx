@@ -80,7 +80,7 @@ const Home: React.FC = () => {
             <img
               src={homeContent.heroImage}
               className="w-full h-full object-cover object-center md:object-[50%_25%]"
-              alt="Hero Architectural"
+              alt={getContent(homeContent, 'heroImageAlt') || "Hero Architectural"}
               fetchPriority="high"
               loading="eager"
             />

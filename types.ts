@@ -16,6 +16,8 @@ export interface Project {
   title_ar?: string;
   sector: Sector;
   image: string;
+  image_alt?: string;
+  image_alt_ar?: string;
   description: string;
   description_ar?: string;
   year: string;
@@ -34,6 +36,8 @@ export interface HomeContent {
   title: string;
   title_ar?: string;
   heroImage: string;
+  heroImageAlt?: string;
+  heroImageAltAr?: string;
   heroImageMobile?: string;
   subtitle: string;
   subtitle_ar?: string;
@@ -50,6 +54,6 @@ export interface HomeContent {
   mission_text?: string;
   mission_text_ar?: string;
   values?: Array<{ title: string; title_ar?: string }>;
-  founders?: Array<{ name: string; role: string; bio: string; bio_ar?: string; image?: string; initials?: string }>;
-  team?: Array<{ name: string; role: string; image?: string; initials?: string }>;
+  founders?: Array<{ name: string; role: string; bio: string; bio_ar?: string; image?: string; image_alt?: string; image_alt_ar?: string; initials?: string }>;
+  team?: Array<{ name: string; role: string; image?: string; image_alt?: string; image_alt_ar?: string; initials?: string }>;
 }

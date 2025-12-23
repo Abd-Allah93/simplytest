@@ -154,7 +154,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ content }) => {
                             {founder.image ? (
                                 <img
                                     src={founder.image}
-                                    alt={founder.name}
+                                    alt={getContent(founder, 'image_alt') || founder.name}
                                     className="w-48 h-48 mb-8 rounded-full object-cover border-2 border-stone-300 dark:border-stone-700 group-hover:border-gold/50 transition-colors"
                                     loading="lazy"
                                     decoding="async"
@@ -204,7 +204,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ content }) => {
                                 {member.image ? (
                                     <img
                                         src={member.image}
-                                        alt={member.name}
+                                        alt={getContent(member, 'image_alt') || member.name}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy"
                                         decoding="async"
