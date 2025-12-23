@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimplyDesign | Architectural Fluidity</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: '#D4AF37',
+            stone: {
+              50: '#fafaf9',
+              100: '#f5f5f4',
+              200: '#e7e5e4',
+              300: '#d6d3d1',
+              400: '#a8a29e',
+              500: '#78716c',
+              600: '#57534e',
+              700: '#44403c',
+              800: '#292524',
+              900: '#1c1917',
+              950: '#0c0a09',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fafaf9;
+      /* stone-50 */
+      color: #1c1917;
+      /* stone-900 */
+      cursor: none;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dark body {
+      background-color: #0c0a09;
+      /* stone-950 */
+      color: #e7e5e4;
+      /* stone-200 */
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .font-sans {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* Lenis Smooth Scroll Recommended CSS */
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0c0a09;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 10px;
+    }
+
+    .text-gold {
+      color: #D4AF37;
+    }
+
+    .bg-gold {
+      background-color: #D4AF37;
+    }
+
+    .border-gold {
+      border-color: #D4AF37;
+    }
+
+    /* Magnetic Button Animation */
+    .magnetic-wrap {
+      display: inline-block;
+    }
+
+    /* Custom Cursor Classes */
+    .cursor-hover-active {
+      scale: 2.5;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid #D4AF37;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "clsx": "https://esm.sh/clsx@^2.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "tailwind-merge": "https://esm.sh/tailwind-merge@^3.4.0",
+    "lenis": "https://esm.sh/lenis@^1.1.20"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

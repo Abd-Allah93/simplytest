@@ -1,0 +1,7 @@
+{
+  "name": "LuxeStruct - Architectural Finishing & Construction",
+  "description": "A high-end construction and fit-out firm specializing in architectural fluid designs and premium commercial and residential spaces.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

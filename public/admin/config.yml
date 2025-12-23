@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  # Blog posts
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  
+  # Home page content
+  - name: "home"
+    label: "Home Page"
+    files:
+      - label: "Home Page Content"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Subtitle", name: "subtitle", widget: "string"}
+          - {label: "Description", name: "description", widget: "markdown"}
+  
+  # Projects
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Project Name", name: "title", widget: "string"}
+      - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Sector", name: "sector", widget: "select", options: ["COMMERCIAL", "RESIDENTIAL", "ADMINISTRATIVE", "HOTELS", "SPORTS", "PHARMACIES", "ARCHITECTURAL BUILDINGS", "ENTRANCES"]}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Details", name: "body", widget: "markdown"}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://simplytest.pages.dev/sitemap.xml
