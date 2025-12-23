@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../hooks/useLanguage';
 import { HomeContent } from '../types';
@@ -8,7 +8,7 @@ interface AboutSectionProps {
     content: HomeContent;
 }
 
-const fadeInUp = {
+const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
         opacity: 1,
@@ -17,7 +17,7 @@ const fadeInUp = {
     }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,

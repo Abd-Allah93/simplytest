@@ -21,7 +21,7 @@ export const useLanguage = () => {
         }
     }, [language]);
 
-    const getContent = <T extends Record<string, any>>(data: T | null | undefined, field: string): any => {
+    const getContent = (data: any, field: string): any => {
         if (!data) return '';
         if (isArabic) {
             const arField = `${field}_ar`;
