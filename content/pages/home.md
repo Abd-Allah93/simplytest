@@ -11,5 +11,5 @@ founders:
   - name: test founders
     role: test founders
     bio: test founders
-    image: /images/unnamed.jpg
+    image: /images/3.webp
 ---
