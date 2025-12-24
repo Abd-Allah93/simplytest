@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    @apply bg-stone-50 text-stone-900 cursor-none transition-colors duration-300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .dark body {
+    @apply bg-stone-950 text-stone-200;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: #D4AF37;
+  }
+
+  .bg-gold {
+    background-color: #D4AF37;
+  }
+
+  .border-gold {
+    border-color: #D4AF37;
+  }
+
+  /* Custom Cursor Classes */
+  .cursor-hover-active {
+    scale: 2.5;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid #D4AF37;
+  }
+}
+
+/* Lenis Smooth Scroll Recommended CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0a09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+/* Magnetic Button Animation */
+.magnetic-wrap {
+  display: inline-block;
+}
